@@ -5,32 +5,37 @@ import "./FeatureSlider.css"
 
 const INTERVAL_MS = 10000
 
-function FeatureSlider() {
-  const [current, setCurrent] = useState(0)
-  const [paused, setPaused] = useState(false)
+interface Props {
+  current: number
+  setCurrent: (n: number) => void
+  paused: boolean
+}
+
+function FeatureSlider({ current, setCurrent, paused }: Props) {
+  const [hoverPaused, setHoverPaused] = useState(false)
   const navigate = useNavigate()
 
   const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % SLIDER_ITEMS.length)
-  }, [])
+    setCurrent((current + 1) % SLIDER_ITEMS.length)
+  }, [current, setCurrent])
 
   const prev = () => {
-    setCurrent((prev) => (prev - 1 + SLIDER_ITEMS.length) % SLIDER_ITEMS.length)
+    setCurrent((current - 1 + SLIDER_ITEMS.length) % SLIDER_ITEMS.length)
   }
 
   useEffect(() => {
-    if (paused) return
+    if (paused || hoverPaused) return
     const timer = setInterval(next, INTERVAL_MS)
     return () => clearInterval(timer)
-  }, [paused, next])
+  }, [paused, hoverPaused, next])
 
   const item = SLIDER_ITEMS[current]
 
   return (
     <div
       className="slider"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => setHoverPaused(true)}
+      onMouseLeave={() => setHoverPaused(false)}
     >
       <div className="slider-image-wrap">
         <img

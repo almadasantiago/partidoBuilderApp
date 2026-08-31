@@ -1,4 +1,85 @@
 .home-page {
   width: 100%;
-  min-height: 100%;
+}
+
+.feature-detail {
+  background-color: var(--color-primary);
+  padding: var(--space-12) var(--space-6);
+}
+
+.feature-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feature-detail-tag {
+  display: block;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-3);
+}
+
+.feature-detail-title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.feature-detail-description {
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.feature-detail-btn {
+  display: inline-block;
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  border: none;
+  padding: var(--space-2) var(--space-6);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.feature-detail-btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 48px;
+  height: 48px;
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-secondary);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.scroll-top-btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-text);
 }
