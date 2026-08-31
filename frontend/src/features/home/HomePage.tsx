@@ -1,9 +1,10 @@
-import './HomePage.css'
+import FeatureSlider from "./components/FeatureSlider"
+import "./HomePage.css"
 
 function HomePage() {
   return (
     <div className="home-page">
-      <h1>Inicio</h1>
+      <FeatureSlider />
     </div>
   )
 }
