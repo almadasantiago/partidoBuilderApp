@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import Input from '../../shared/components/Input'
 import Button from '../../shared/components/Button'
-import './LoginPage.css'
+import './RegisterPage.css'
 
-function LoginPage() {
+function RegisterPage() {
   const navigate = useNavigate()
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <div className="login-icon">
+    <div className="register-page">
+      <div className="register-card">
+        <div className="register-icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -20,19 +20,21 @@ function LoginPage() {
           </svg>
         </div>
 
-        <form className="login-form" onSubmit={(e) => e.preventDefault()}>
-          <Input type="text" placeholder="Usuario" />
+        <form className="register-form" onSubmit={(e) => e.preventDefault()}>
+          <Input type="text" placeholder="Nombre completo" />
+          <Input type="email" placeholder="Email" />
+          <Input type="tel" placeholder="Teléfono" />
           <Input type="password" placeholder="Contraseña" />
 
           <Button type="submit" variant="primary">
-            INICIAR SESIÓN
+            REGISTRARSE
           </Button>
           <Button
             type="button"
             variant="secondary"
-            onClick={() => navigate('/register')}
+            onClick={() => navigate('/login')}
           >
-            REGISTRARSE
+            ¿YA TENÉS CUENTA? INICIAR SESIÓN
           </Button>
         </form>
       </div>
@@ -40,4 +42,4 @@ function LoginPage() {
   )
 }
 
-export default LoginPage
+export default RegisterPage
